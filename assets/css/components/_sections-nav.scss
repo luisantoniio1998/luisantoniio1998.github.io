@@ -1,0 +1,233 @@
+.sections-nav-container {
+	//display: none;
+	position: fixed;
+	z-index: $zindex-fixed;
+	width: 100%;
+	left: 0;
+	transform: translate(calc(100% + #{$grid-gutter-width / 2}), 0);
+	transition: transform .35s ease;
+	background-color: $body-bg;
+
+	@include media-breakpoint-up(sm) {
+		transform: translate(calc(100% + #{$grid-gutter-width}), 0);
+	}
+
+	@include media-breakpoint-up(md) {
+		width: 20rem;
+		right: 0;
+		left: auto;
+	}
+
+	@include media-breakpoint-up(xl) {
+		display: block;
+		top: map-get($spacers, 10);
+		left: calc(100% / 12 * 9 + #{$grid-gutter-width / 2});
+		right: auto;
+		width: calc((100% / 12 * 3) - #{$grid-gutter-width});
+		transform: none;
+		transition: none;
+	}
+
+	@media (min-width: #{1680px + $grid-gutter-width}) {
+		left: calc(((100% - 1680px) / 2) + #{1680px / 12 * 9 + $grid-gutter-width / 2});
+		width: (1680px / 12 * 3) - $grid-gutter-width;
+	}
+}
+
+.sections-nav-in {
+	.sections-nav-container {
+		display: block;
+		transform: translate($grid-gutter-width / 4, 0);
+
+		@include media-breakpoint-up(md) {
+			transform: translate($grid-gutter-width / 2, 0);
+		}
+
+		@include media-breakpoint-up(md) {
+			transform: translate(0, 0);
+		}
+	}
+
+	.content {
+		transform: translate(calc(-100% + #{$grid-gutter-width / 4}), 0);
+
+		@include media-breakpoint-up(sm) {
+			transform: translate(calc(-100% + #{$grid-gutter-width / 2}), 0);
+		}
+
+		@include media-breakpoint-up(md) {
+			transform: translate(-20rem, 0);
+		}
+
+		@include media-breakpoint-up(xl) {
+			transform: translate(0, 0);
+		}
+	}
+
+	.sections-nav-toggler-bar {
+		&:first-child {
+			transform: scaleX(0);
+		}
+
+		&:last-child {
+			transform: scaleX(0);
+		}
+
+		&:nth-child(2) {
+			transform: rotate(45deg);
+		}
+
+		&:nth-child(3) {
+			transform: rotate(-45deg);
+		}
+	}
+}
+
+.sections-nav {
+	flex-direction: column;
+	overflow: hidden;
+
+	&::before {
+		content: "";
+		position: absolute;
+		width: 0;
+		left: 0;
+		top: 0;
+		bottom: 0;
+		border-right: $border-width solid $border-color;
+	}
+}
+
+.sections-nav-animated {
+	@include media-breakpoint-up(xl) {
+		&::before {
+			transform: scaleY(0);
+			transform-origin: top;
+			animation: sections-nav .5s $cubic-bezier-transition .5s forwards;
+		}
+
+		.sections-nav-item {
+			transform: translate(100%, 0);
+			animation: sections-nav-item .35s $cubic-bezier-transition forwards;
+		}
+
+		@for $i from 1 through 15 {
+			.sections-nav-item:nth-child(#{$i}n) {
+				animation-delay: #{$i * .05 + .25}s;
+			}
+		}
+	}
+}
+
+.sections-nav-item {
+}
+
+.sections-nav-link {
+	display: block;
+	position: relative;
+	padding-left: map-get($spacers, 6);
+	padding-top: $spacer * .375;
+	padding-bottom: $spacer * .375;
+	font-size: $font-size-lg;
+	font-weight: bold;
+	text-transform: uppercase;
+	transition: color .15s ease-in-out;
+
+	&::before {
+		content: "";
+		position: absolute;
+		width: 0;
+		left: 0;
+		top: 0;
+		bottom: 0;
+		border-right: $border-width solid $body-color;
+		transition: transform .15s ease-in-out;
+		transform: scaleY(0);
+	}
+
+
+	@include hover {
+		text-decoration: none;
+
+		&:not(.active) {
+			color: $gray-500;
+
+			&::before {
+				transform: scaleX(1);
+			}
+		}
+	}
+
+	&.active {
+		color: $gray-500;
+
+		&::before {
+			transform: scaleY(1);
+		}
+	}
+}
+
+.sections-nav-counter {
+	display: inline-block;
+	width: 1.75rem;
+	font-weight: normal;
+	font-size: $font-size-base;
+}
+
+.sections-nav-info {
+	padding-top: map-get($spacers, 8);
+	padding-left: map-get($spacers, 6);
+}
+
+.sections-nav-toggler {
+	display: block;
+	position: relative;
+	width: 32px;
+	height: $border-width * 3 + 8px + 8px;
+	padding: 0;
+	cursor: if($enable-pointer-cursor-for-buttons, pointer, null);
+	user-select: none;
+	background-color: transparent;
+	border: none;
+
+	@include hover-focus {
+		outline: 0;
+	}
+
+	@include media-breakpoint-up(xl) {
+		display: none;
+	}
+}
+
+.sections-nav-toggler-bar {
+	display: block;
+	position: absolute;
+	width: 100%;
+	height: $border-width;
+	background-color: $body-color;
+	transition: transform .35s ease;
+	transform-origin: center;
+
+	&:first-child {
+		top: 0;
+	}
+
+	&:last-child {
+		bottom: 0;
+	}
+
+	&:nth-child(2),
+	&:nth-child(3) {
+		top: $border-width + 8px;
+	}
+}
+
+@keyframes sections-nav {
+	from { transform: scaleY(0); }
+	to { transform: scaleY(1); }
+}
+
+@keyframes sections-nav-item {
+	from { transform: translate(100%, 0); }
+	to { transform: translate(0, 0); }
+}

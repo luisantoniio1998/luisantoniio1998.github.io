@@ -1,0 +1,33 @@
+// import default boostrap styles
+@import "../../../node_modules/bootstrap/scss/progress";
+
+.progress-label {
+	display: block;
+	margin-bottom: map-get($spacers, 2);
+	font-weight: $font-weight-bold;
+	text-transform: uppercase;
+}
+
+.progress-animated {
+	&,
+	.progress-bar {
+		transform: scaleX(0);
+		transform-origin: left;
+	}
+}
+
+.interaction-in {
+	.progress-animated {
+		animation: progress-grow .35s $cubic-bezier-transition .6s forwards;
+
+		.progress-bar {
+			animation: progress-grow .35s $cubic-bezier-transition .75s forwards;
+		}
+	}
+}
+
+
+@keyframes progress-grow {
+	from { transform: scaleX(0); }
+	to { transform: scaleX(1); }
+}

@@ -1,0 +1,21 @@
+// import default boostrap styles
+@import "../../../node_modules/bootstrap/scss/modal";
+
+.modal-close {
+	width: 2.5rem;
+	height: 2.5rem;
+	background: transparent escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='41.414' height='41.414' viewBox='0 0 41.414 41.414'><g id='Close' transform='translate(-1582.293 -39.293)'><line x1='40' y2='40' transform='translate(1583 40)' fill='none' stroke='#{$body-color}' stroke-width='2'/><line x2='40' y2='40' transform='translate(1583 40)' fill='none' stroke='#{$body-color}' stroke-width='2'/></g></svg>")) no-repeat 50% / 100% 100%;
+	border: 0;
+
+	@include hover() {
+		text-decoration: none;
+	}
+}
+
+.modal-fluid {
+	max-width: unset;
+
+	@media (min-width: $modal-fluid-max + $grid-gutter-width) {
+		max-width: $modal-fluid-max;
+	}
+}

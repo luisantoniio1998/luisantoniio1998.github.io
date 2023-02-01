@@ -1,0 +1,21 @@
+.error {
+	padding-bottom: map-get($spacers, 8);
+	color: theme-color(danger);
+}
+
+.error-code {
+	margin: 0;
+	line-height: 1;
+	font-size: $font-size-base * 8;
+}
+
+.error-title {
+	margin: 0;
+	line-height: 1;
+	@include safe-font-size($h1-font-size);
+}
+
+.error-text {
+	margin-top: map-get($spacers, 8);
+	@include text-block-font-size();
+}

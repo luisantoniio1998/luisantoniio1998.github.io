@@ -1,0 +1,30 @@
+// import default boostrap styles
+@import "../../../node_modules/bootstrap/scss/forms";
+
+label {
+	line-height: 1;
+	font-size: $font-size-sm;
+	font-weight: $font-weight-bold;
+	text-transform: uppercase;
+}
+
+.form-control {
+	border-top: 0;
+	border-left: 0;
+	border-right: 0;
+	appearance: none;
+
+	&:disabled,
+	&[readonly] {
+		border-color: $gray-400;
+		color: $gray-400;
+	}
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active  {
+	-webkit-text-fill-color: $body-color !important;
+	-webkit-box-shadow: 0 0 0 30px $body-bg inset !important;
+}

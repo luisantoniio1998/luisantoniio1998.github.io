@@ -1,0 +1,86 @@
+// Main portfolio styles
+
+// functions
+@import "../../node_modules/bootstrap/scss/functions";
+
+
+// themes and variables
+@import "themes/yellow-black";
+@import "themes/black-white";
+@import "themes/pink-black";
+@import "themes/blue-black";
+@import "variables";
+@import "../../node_modules/bootstrap/scss/variables";
+@import "variables-cleaner";
+
+
+// mixins
+@import "../../node_modules/bootstrap/scss/mixins";
+
+
+// custom mixins
+@import "mixins/mixins";
+
+
+// framework initialization
+@import "../../node_modules/bootstrap/scss/root";
+@import "../../node_modules/bootstrap/scss/reboot";
+@import "content/type";
+@import "../../node_modules/bootstrap/scss/transitions";
+
+
+// utils
+@import "../../node_modules/bootstrap/scss/utilities";
+
+
+// content
+@import "../../node_modules/bootstrap/scss/images";
+@import "../../node_modules/bootstrap/scss/code";
+@import "../../node_modules/bootstrap/scss/tables";
+@import "../../node_modules/bootstrap/scss/close";
+
+
+// layout
+@import "../../node_modules/bootstrap/scss/grid";
+@import "layout/layout";
+
+
+// components
+@import "components/buttons";
+@import "components/dropdown";
+@import "../../node_modules/bootstrap/scss/button-group";
+@import "components/input-group";
+@import "components/forms";
+@import "components/custom-forms";
+@import "components/header";
+@import "components/nav";
+@import "components/navbar";
+@import "components/sections-nav";
+@import "components/card";
+@import "components/breadcrumb";
+@import "components/pagination";
+@import "components/badge";
+@import "components/jumbotron";
+@import "components/alert";
+@import "components/progress";
+@import "components/media";
+@import "components/list-group";
+@import "components/toasts";
+@import "components/modal";
+@import "components/tooltip";
+@import "components/popover";
+@import "components/carousel";
+@import "components/spinners";
+@import "components/section";
+@import "components/article";
+@import "components/counter";
+@import "components/timeline";
+@import "components/logos";
+@import "components/testimonial";
+@import "components/contact";
+@import "components/animations";
+@import "components/error";
+
+
+// print
+@import "../../node_modules/bootstrap/scss/print";

@@ -1,0 +1,20 @@
+.logo-link {
+	display: flex;
+	opacity: .5;
+	padding: map-get($spacers, 3);
+	margin-bottom: map-get($spacers, 3);
+	align-items: center;
+	justify-content: center;
+	transition: $transition-fade;
+
+	@include hover {
+		opacity: 1;
+	}
+}
+
+.logo-img {
+	width: auto;
+	height: auto;
+	max-width: 100%;
+	max-height: 100%;
+}

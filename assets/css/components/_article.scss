@@ -1,0 +1,37 @@
+.article {
+	@include text-block-font-size();
+
+	p {
+		margin-bottom: map-get($spacers, 6);
+	}
+}
+
+.article-header {
+	margin-bottom: map-get($spacers, 10);
+
+	.article-title,
+	.article-subtitle,
+	.article-tags {
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+
+.article-title {
+	margin-bottom: map-get($spacers, 1);
+	@include safe-font-size($h1-font-size);
+}
+
+.article-subtitle {
+	margin-bottom: map-get($spacers, 6);
+	font-size: $font-size-xl;
+	font-weight: $font-weight-normal;
+	color: $gray-600;
+}
+
+.article-tags {
+	font-size: $font-size-sm;
+	font-weight: $font-weight-bold;
+	text-transform: uppercase;
+}

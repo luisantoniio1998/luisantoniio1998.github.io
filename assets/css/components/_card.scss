@@ -1,0 +1,57 @@
+// import default boostrap styles
+@import "../../../node_modules/bootstrap/scss/card";
+
+.card {
+	border: 0;
+	transition: transform .15s ease-in-out;
+
+	@include hover {
+		text-decoration: none;
+		color: $card-color;
+		transform: translate(0, -.5rem);
+
+		.card-img-top {
+			opacity: 1;
+		}
+	}
+}
+
+.card-img-top {
+	transition: $transition-fade;
+	opacity: .75;
+}
+
+.card-body {
+	padding: $card-spacer-y 0;
+}
+
+.card-title {
+	font-size: $h5-font-size;
+}
+
+.card-subtitle {
+	margin-top: -$card-spacer-y * .75;
+	margin-bottom: $card-spacer-y;
+	font-size: $font-size-base;
+	opacity: .6;
+	font-weight: $font-weight-normal;
+}
+
+.card-counter {
+	display: block;
+	margin-bottom: map-get($spacers, 6);
+	line-height: 1;
+	font-size: $h1-font-size;
+	color: $gray-400;
+
+	&::before {
+		content: "#";
+		font-size: $h2-font-size;
+	}
+}
+
+.card-tags {
+	font-size: $font-size-xs;
+	font-weight: $font-weight-bold;
+	text-transform: uppercase;
+}

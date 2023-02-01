@@ -1,0 +1,29 @@
+// import default boostrap styles
+@import "../../../node_modules/bootstrap/scss/custom-forms";
+
+.custom-select {
+	border-top: 0;
+	border-left: 0;
+	border-right: 0;
+
+	option {
+		color: $black;
+	}
+}
+
+.custom-control-label {
+	line-height: 1.75;
+}
+
+.custom-file-label {
+	border-top: 0;
+	border-left: 0;
+	border-right: 0;
+	text-transform: unset;
+
+	&::after {
+		font-size: $font-size-sm;
+		font-weight: $font-weight-bold;
+		text-transform: uppercase;
+	}
+}

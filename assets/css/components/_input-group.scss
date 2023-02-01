@@ -1,0 +1,53 @@
+// import default boostrap styles
+@import "../../../node_modules/bootstrap/scss/input-group";
+
+.input-group {
+	border-bottom: $input-border-width solid $input-border-color;
+
+	> .form-control,
+	> .form-control-plaintext,
+	> .custom-select,
+	> .custom-file {
+		border: 0;
+		margin-bottom: -$input-border-width;
+
+		+ .form-control,
+		+ .custom-select,
+		+ .custom-file {
+			margin-left: 0;
+		}
+	}
+
+	.btn {
+		padding-left: 1rem;
+		padding-right: 1rem;
+		border: 0;
+		border-radius: 0;
+	}
+}
+
+.input-group-text {
+	border: 0;
+}
+
+.input-group-prepend,
+.input-group-append {
+	margin-bottom: -$input-border-width;
+
+	.btn + .btn,
+	.btn + .input-group-text,
+	.input-group-text + .input-group-text,
+	.input-group-text + .btn {
+		margin-left: 0;
+	}
+}
+
+.input-group-prepend {
+	margin-right: 0;
+	padding-right: 1rem;
+}
+
+.input-group-append {
+	margin-left: 0;
+	padding-left: 1rem;
+}

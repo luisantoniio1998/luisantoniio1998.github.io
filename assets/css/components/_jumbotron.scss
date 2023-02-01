@@ -1,0 +1,15 @@
+// import default boostrap styles
+@import "../../../node_modules/bootstrap/scss/jumbotron";
+
+.jumbotron-img {
+	display: block;
+	width: 10rem;
+	height: 10rem;
+	border-radius: 5rem;
+	border: $border-width solid $body-color;
+	margin-bottom: map-get($spacers, 9);
+}
+
+.jumbotron-animated {
+	
+}

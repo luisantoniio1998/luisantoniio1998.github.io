@@ -1,0 +1,38 @@
+// import default boostrap styles
+@import "../../../node_modules/bootstrap/scss/popover";
+
+.popover-header {
+	border-bottom: $popover-border-width - 1 solid $gray-100;
+}
+
+.bs-popover-top {
+	> .arrow {
+		&::after {
+			bottom: $popover-border-width + 1;
+		}
+	}
+}
+
+.bs-popover-right {
+	> .arrow {
+		&::after {
+			left: $popover-border-width + 1;
+		}
+	}
+}
+
+.bs-popover-bottom {
+	> .arrow {
+		&::after {
+			top: $popover-border-width + 1;
+		}
+	}
+}
+
+.bs-popover-left {
+	> .arrow {
+		&::after {
+			right: $popover-border-width + 1;
+		}
+	}
+}

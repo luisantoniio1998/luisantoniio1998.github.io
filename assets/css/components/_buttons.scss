@@ -1,0 +1,38 @@
+// import default boostrap styles
+@import "../../../node_modules/bootstrap/scss/buttons";
+
+.btn {
+	text-transform: uppercase;
+
+	@include hover() {
+		color: $body-color;
+		text-decoration: none;
+	}
+
+	&:focus,
+	&.focus {
+		box-shadow: none;
+	}
+
+	&:not(:disabled):not(.disabled):active,
+	&:not(:disabled):not(.disabled).active {
+		box-shadow: none;
+
+		&:focus {
+			box-shadow: none;
+		}
+	}
+}
+
+
+@each $color, $value in $theme-colors {
+	.btn-#{$color} {
+		@include custom-button-variant($value, transparent, $value, $body-bg, $value, $value, $body-bg, $value, $value);
+	}
+}
+
+@each $color, $value in $theme-colors {
+	.btn-outline-#{$color} {
+		@include custom-button-variant($value, transparent, $value, $body-bg, $value, $value, $body-bg, $value, $value);
+	}
+}

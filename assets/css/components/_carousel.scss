@@ -1,0 +1,45 @@
+// import default boostrap styles
+@import "../../../node_modules/bootstrap/scss/carousel";
+
+.carousel-control-prev,
+.carousel-control-next {
+	position: absolute;
+	align-items: flex-end;
+	top: 0;
+	bottom: ($carousel-indicator-hit-area-height / 2) + 1px;
+	width: $carousel-control-width;
+	z-index: 16;
+	background-image: none;
+}
+
+.carousel-control-next {
+	justify-content: flex-end;
+}
+
+.carousel-control-prev {
+	justify-content: flex-start;
+}
+
+.carousel-indicators {
+	position: relative;
+	margin: $spacer 0 0 0;
+
+	&::before {
+		content: "";
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: $carousel-indicator-hit-area-height;
+		border-top: $border-width solid $gray-100;
+	}
+
+	li {
+		opacity: .2;
+	}
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+	width: $carousel-control-icon-width;
+	height: $carousel-control-icon-height;
+}
