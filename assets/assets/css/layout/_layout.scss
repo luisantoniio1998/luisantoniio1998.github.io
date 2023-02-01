@@ -1,0 +1,20 @@
+.container-fluid-limited {
+	@include make-container();
+
+	@media (min-width: #{1680px + $grid-gutter-width}) {
+		width: 1680px;
+	}
+}
+
+.content {
+	transform: translate(0, 0);
+	transition: transform .5s ease;
+}
+
+
+
+@include make-grid-gutters($grid-gutter-width / 2);
+
+@include media-breakpoint-up(sm) {
+	@include make-grid-gutters($grid-gutter-width);
+}

@@ -1,0 +1,22 @@
+@mixin safe-font-size($font-size, $font-sizes: $max-font-sizes) {
+	@each $breakpoint, $max-font-size in $font-sizes {
+		$final-font-size: if($max-font-size != null, $max-font-size, $font-size);
+
+		@if $breakpoint == 0 {
+			font-size: $final-font-size;
+		} @else {
+			@media (min-width: $breakpoint) {
+				font-size: $final-font-size;
+			}
+		}
+
+	}
+}
+
+@mixin text-block-font-size() {
+	font-size: $font-size-lg;
+
+	@media (min-width: 1680px) {
+		font-size: $font-size-xl;
+	}
+}

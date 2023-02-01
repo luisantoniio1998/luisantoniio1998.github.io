@@ -1,0 +1,6 @@
+// import default boostrap styles
+@import "../../../node_modules/bootstrap/scss/breadcrumb";
+
+.breadcrumb {
+	border-bottom: $border-width solid $border-color;
+}

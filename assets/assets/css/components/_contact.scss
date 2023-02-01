@@ -1,0 +1,12 @@
+.contact {
+	font-size: $font-size-xl;
+}
+
+.contact-label {
+	display: block;
+	margin-bottom: map-get($spacers, 5);
+	font-weight: $font-weight-bold;
+	font-size: $font-size-sm;
+	text-transform: uppercase;
+	color: $gray-600;
+}

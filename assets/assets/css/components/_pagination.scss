@@ -1,0 +1,43 @@
+// import default boostrap styles
+@import "../../../node_modules/bootstrap/scss/pagination";
+
+.pagination {
+	border-radius: 0;
+}
+
+.page-link {
+	margin-left: 0;
+	border-top: 0;
+	border-right: 0;
+	border-left: 0;
+}
+
+.page-item {
+	&:first-child {
+		.page-link {
+			margin-left: 0;
+			@include border-left-radius(0);
+		}
+	}
+	&:last-child {
+		.page-link {
+			@include border-right-radius(0);
+		}
+	}
+
+	&.active .page-link {
+		z-index: 3;
+		color: $pagination-active-color;
+		background-color: $pagination-active-bg;
+		border-color: $pagination-active-border-color;
+	}
+
+	&.disabled .page-link {
+		color: $pagination-disabled-color;
+		pointer-events: none;
+		// Opinionated: remove the "hand" cursor set previously for .page-link
+		cursor: auto;
+		background-color: $pagination-disabled-bg;
+		border-color: $pagination-disabled-border-color;
+	}
+}

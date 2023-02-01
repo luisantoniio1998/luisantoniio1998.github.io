@@ -1,0 +1,34 @@
+@mixin custom-button-variant($color, $background, $border, $hover-color, $hover-background, $hover-border, $active-color, $active-background, $active-border) {
+	color: $color;
+	background-color: $background;
+	border-color: $border;
+
+	@include hover() {
+		color: $hover-color;
+		background-color: $hover-background;
+		border-color: $hover-border;
+	}
+
+	&:focus,
+	&.focus {
+		color: $hover-color;
+		background-color: $hover-background;
+		border-color: $hover-border;
+	}
+
+	// Disabled comes first so active can properly restyle
+	&.disabled,
+	&:disabled {
+		color: $color;
+		background-color: $background;
+		border-color: $border;
+	}
+
+	&:not(:disabled):not(.disabled):active,
+	&:not(:disabled):not(.disabled).active,
+	.show > &.dropdown-toggle {
+		color: $active-color;
+		background-color: $active-background;
+		border-color: $active-border;
+	}
+}

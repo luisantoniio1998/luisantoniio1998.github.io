@@ -1,0 +1,74 @@
+// import default boostrap styles
+@import "../../../node_modules/bootstrap/scss/type";
+
+html {
+	font-size: 14px;
+
+	@include media-breakpoint-up(sm) {
+		font-size: 15px;
+	}
+
+	@include media-breakpoint-up(md) {
+		font-size: 16px;
+	}
+}
+
+h1, .h1 { @include safe-font-size($h1-font-size); }
+h2, .h2 { @include safe-font-size($h2-font-size); }
+h3, .h3 { @include safe-font-size($h3-font-size); }
+h4, .h4 { @include safe-font-size($h4-font-size); }
+h5, .h5 { @include safe-font-size($h5-font-size); }
+h6, .h6 { @include safe-font-size($h6-font-size); }
+
+.lead {
+	text-transform: uppercase;
+}
+
+.display-1,
+.display-2,
+.display-3,
+.display-4 {
+	position: relative;
+	padding-bottom: $headings-margin-bottom * 1.75;
+	margin-bottom: $headings-margin-bottom * 2;
+
+	&::after {
+		content: "";
+		position: absolute;
+		left: 0;
+		bottom: -$border-width;
+		width: 6rem;
+		border-bottom: $border-width solid $body-color;
+	}
+}
+
+.display-1 {
+	@include safe-font-size($display1-size);
+}
+.display-2 {
+	@include safe-font-size($display2-size);
+}
+.display-3 {
+	@include safe-font-size($display3-size);
+}
+.display-4 {
+	@include safe-font-size($display4-size);
+}
+
+.display-animated {
+	&::after {
+		transform-origin: left;
+		transform: scaleX(20) translate(100vw, 0);
+	}
+}
+
+.display-animated-in {
+	&::after {
+		animation: display 1s $cubic-bezier-transition .5s forwards;
+	}
+}
+
+@keyframes display {
+	from { transform: scaleX(20) translate(100vw, 0); }
+	to { transform: scaleX(1) translate(0, 0); }
+}

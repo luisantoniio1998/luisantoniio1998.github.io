@@ -1,0 +1,350 @@
+// Color system
+//
+
+$theme-color-interval:      10%;
+
+// Options
+//
+
+$enable-caret:                                true;
+$enable-rounded:                              true;
+$enable-shadows:                              false;
+$enable-gradients:                            false;
+$enable-transitions:                          true;
+$enable-prefers-reduced-motion-media-query:   true;
+$enable-grid-classes:                         true;
+$enable-pointer-cursor-for-buttons:           true;
+$enable-print-styles:                         true;
+$enable-responsive-font-sizes:                false;
+$enable-validation-icons:                     false;
+$enable-deprecation-messages:                 true;
+
+
+// Components
+//
+
+$border-width:                2px;
+$border-radius:               .375rem;
+$border-radius-lg:            .75rem;
+$border-radius-sm:            .1875rem;
+
+
+// Transitions
+//
+
+$cubic-bezier-transition: cubic-bezier(.75, 0, .45, 1.1) !default;
+
+
+// Spacing
+//
+
+$spacer: 1rem;
+$spacers: ();
+
+$spacers: map-merge(
+	(
+		0: 0,
+		1: ($spacer * .5),
+		2: ($spacer * .75),
+		3: $spacer,
+		4: ($spacer * 1.25),
+		5: ($spacer * 1.5),
+		6: ($spacer * 2),
+		7: ($spacer * 2.5),
+		8: ($spacer * 3),
+		9: ($spacer * 4),
+		10: ($spacer * 5),
+	),
+	$spacers
+);
+
+
+// Grid columns
+//
+
+$grid-gutter-width:           60px;
+
+
+// Typography
+//
+
+$font-family-sans-serif:      Montserrat, -apple-system, blinkmacsystemfont, "segoe ui", roboto, "helvetica neue", arial, "noto sans", sans-serif, "apple color emoji", "segoe ui emoji", "segoe ui symbol", "noto color emoji";
+$font-family-monospace:       sfmono-regular, menlo, monaco, consolas, "liberation mono", "courier new", monospace;
+$font-family-base:            $font-family-sans-serif;
+
+$font-size-base:              1rem; // assumes the browser default, typically `16px`
+$font-size-xl:                $font-size-base * 1.5;
+$font-size-lg:                $font-size-base * 1.25;
+$font-size-md:                $font-size-base * 1.125;
+$font-size-sm:                $font-size-base * .875;
+$font-size-xs:                $font-size-base * .75;
+
+$font-weight-lighter:         lighter;
+$font-weight-light:           300;
+$font-weight-normal:          400;
+$font-weight-bold:            700;
+$font-weight-bolder:          800;
+
+$font-weight-base:            $font-weight-normal;
+$line-height-base:            1.5;
+
+$h1-font-size:                $font-size-base * 4;
+$h2-font-size:                $font-size-base * 3;
+$h3-font-size:                $font-size-base * 2.5;
+$h4-font-size:                $font-size-base * 2;
+$h5-font-size:                $font-size-base * 1.75;
+$h6-font-size:                $font-size-base * 1.5;
+
+$max-font-sizes: ();
+$max-font-sizes: map-merge(
+	(
+		0: 2.5rem,
+		360px: 2.75rem,
+		410px: 2.85rem,
+		480px: 3rem,
+		576px: null,
+	),
+	$max-font-sizes
+);
+
+$headings-margin-bottom:      $spacer;
+$headings-font-family:        null;
+$headings-font-weight:        $font-weight-bolder;
+$headings-line-height:        1.2;
+$headings-color:              null;
+
+$display1-size:               8rem;
+$display2-size:               6rem;
+$display3-size:               7rem;
+$display4-size:               5rem;
+
+$display1-weight:             $font-weight-bolder;
+$display2-weight:             $font-weight-bolder;
+$display3-weight:             $font-weight-bolder;
+$display4-weight:             $font-weight-bolder;
+$display-line-height:         1;
+
+$lead-font-size:              $font-size-base;
+$lead-font-weight:            $font-weight-bold;
+
+$small-font-size:             75%;
+
+$blockquote-small-font-size:  $small-font-size;
+$blockquote-font-size:        $font-size-base * 1.25;
+
+$kbd-box-shadow:              none;
+
+
+
+// Buttons + forms
+//
+
+$input-btn-padding-y:         .75rem;
+$input-btn-padding-x:         0;
+$input-btn-font-family:       null;
+$input-btn-font-size:         $font-size-sm;
+$input-btn-line-height:       $line-height-base;
+
+$input-btn-focus-width:       0;
+$input-btn-focus-color:       transparent;
+$input-btn-focus-box-shadow:  none;
+
+$input-btn-padding-y-sm:      .5rem;
+$input-btn-padding-x-sm:      0;
+$input-btn-font-size-sm:      $font-size-xs;
+$input-btn-line-height-sm:    $line-height-base;
+
+$input-btn-padding-y-lg:      1rem;
+$input-btn-padding-x-lg:      0;
+$input-btn-font-size-lg:      $font-size-base;
+$input-btn-line-height-lg:    $line-height-base;
+
+$input-btn-border-width:      $border-width;
+
+
+// Buttons
+//
+
+$btn-padding-y:               $input-btn-padding-y;
+$btn-padding-x:               3rem;
+$btn-font-family:             $input-btn-font-family;
+$btn-font-size:               $input-btn-font-size;
+$btn-line-height:             $input-btn-line-height;
+$btn-white-space:             null; // set to `nowrap` to prevent text wrapping
+
+$btn-padding-y-sm:            $input-btn-padding-y-sm;
+$btn-padding-x-sm:            2.5rem;
+$btn-font-size-sm:            $input-btn-font-size-sm;
+$btn-line-height-sm:          $input-btn-line-height-sm;
+
+$btn-padding-y-lg:            $input-btn-padding-y-lg;
+$btn-padding-x-lg:            3.5;
+$btn-font-size-lg:            $input-btn-font-size-lg;
+$btn-line-height-lg:          $input-btn-line-height-lg;
+
+$btn-border-width:            $input-btn-border-width;
+
+$btn-font-weight:             $font-weight-bold;
+$btn-box-shadow:              none;
+$btn-focus-width:             $input-btn-focus-width;
+$btn-focus-box-shadow:        $input-btn-focus-box-shadow;
+$btn-disabled-opacity:        .5;
+$btn-active-box-shadow:       none;
+
+$btn-block-spacing-y:         .5rem;
+
+$btn-border-radius:           $border-radius;
+$btn-border-radius-lg:        $border-radius-lg;
+$btn-border-radius-sm:        $border-radius-sm;
+
+$btn-transition:              color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
+
+
+// Badges
+//
+
+$badge-font-size:                   65%;
+$badge-padding-y:                   .35em ;
+$badge-border-radius:               $border-radius-sm;
+
+
+// Breadcrumbs
+//
+
+$breadcrumb-font-size:              $font-size-sm;
+
+$breadcrumb-padding-y:              .75rem;
+$breadcrumb-padding-x:              0;
+$breadcrumb-item-padding:           .5rem;
+
+$breadcrumb-margin-bottom:          1rem;
+$breadcrumb-border-radius:          0;
+
+
+// Cards
+//
+
+$card-spacer-y:                     1.5rem;
+$card-spacer-x:                     1rem;
+$card-border-radius:                0;
+$card-inner-border-radius:          0;
+$card-height:                       null;
+$card-img-overlay-padding:          1rem;
+
+
+// Carousel
+
+$carousel-control-width:             3rem;
+$carousel-control-opacity:           1;
+$carousel-control-hover-opacity:     1;
+
+$carousel-indicator-width:           2.5rem;
+$carousel-indicator-height:          2px;
+$carousel-indicator-hit-area-height: 20px;
+$carousel-indicator-spacer:          1px;
+
+$carousel-control-icon-width:        36px;
+$carousel-control-icon-height:       20px;
+
+$carousel-control-prev-icon-bg:      url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='37.013' height='22.35' viewBox='0 0 37.013 22.35'><g transform='translate(-396.343 -7723.904)'><path d='M408.225,7724.611l-10.468,10.468,10.468,10.468' fill='none' stroke='#{$carousel-control-color}' stroke-width='2'/><path d='M398.924,7735.079h34.431' fill='none' stroke='#{$carousel-control-color}' stroke-width='2'/></g></svg>");
+$carousel-control-next-icon-bg:      url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='37.013' height='22.35' viewBox='0 0 37.013 22.35'><g transform='translate(0 0.707)'><path d='M397.757,7724.611l10.468,10.468-10.468,10.468' transform='translate(-372.626 -7724.611)' fill='none' stroke='#{$carousel-control-color}' stroke-width='2'/><path d='M433.355,7735.079H398.924' transform='translate(-398.924 -7724.611)' fill='none' stroke='#{$carousel-control-color}' stroke-width='2'/></g></svg>");
+
+
+// Dropdowns
+//
+
+$dropdown-min-width:                15rem;
+$dropdown-font-size:                $font-size-sm;
+$dropdown-box-shadow:               none;
+$dropdown-item-padding-y:           .5rem;
+$dropdown-item-padding-x:           1rem;
+
+
+// Forms
+
+$label-margin-bottom:               0;
+$input-border-radius:               0;
+$input-border-radius-lg:            0;
+$input-border-radius-sm:            0;
+$form-group-margin-bottom:          2.5rem;
+$custom-select-border-radius:       0;
+$custom-select-box-shadow:          none;
+
+
+// Jumbotron
+
+$jumbotron-padding:                 2rem;
+$jumbotron-bg:                      transparent;
+
+
+// Close
+
+$close-font-weight:                 $font-weight-normal;
+$close-text-shadow:                 none;
+
+
+// Modals
+
+$modal-inner-padding:               1rem;
+$modal-footer-margin-between:       .5rem;
+
+$modal-dialog-margin:               .5rem;
+$modal-dialog-margin-y-sm-up:       .5rem;
+
+$modal-content-border-width:        0;
+$modal-content-border-radius:       0;
+$modal-content-inner-border-radius: 0;
+$modal-content-box-shadow-xs:       none;
+$modal-content-box-shadow-sm-up:    none;
+
+$modal-fluid-max:					1680px;
+
+
+//Navs
+
+$nav-link-padding-y:				$input-btn-padding-y;
+
+
+// Navbar
+
+$navbar-padding-y:                  0;
+$navbar-padding-x:                  0;
+
+$navbar-nav-link-padding-x:         1rem;
+
+$navbar-toggler-padding-y:          .25rem;
+$navbar-toggler-padding-x:          0;
+$navbar-toggler-border-radius:      0;
+
+
+// Pagination
+
+$pagination-padding-y:              .75rem;
+$pagination-padding-x:              1.25rem;
+$pagination-padding-y-sm:           .5rem;
+$pagination-padding-x-sm:           1rem;
+$pagination-padding-y-lg:           1rem;
+$pagination-padding-x-lg:           1.5rem;
+$pagination-line-height:            $line-height-base;
+//
+$pagination-focus-box-shadow:       none;
+
+
+// Popovers
+
+$popover-border-radius:             $border-radius;
+$popover-box-shadow:                none;
+$popover-header-padding-y:          .75rem;
+$popover-header-padding-x:          .75rem;
+
+
+// Progress bars
+
+$progress-height:                   $border-width;
+$progress-border-radius:            $border-radius-sm;
+$progress-box-shadow:               none;
+
+
+// Tooltips
+
+$tooltip-border-radius:             $border-radius-sm;

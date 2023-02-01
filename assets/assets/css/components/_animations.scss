@@ -1,0 +1,55 @@
+.animation {
+	overflow: hidden;
+}
+
+.animation-translate {
+	transform: translate(-100%, 0);
+}
+
+.animation-translate-overline {
+	position: relative;
+	overflow: hidden;
+
+	&::after {
+		content: "";
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 40%;
+		bottom: 40%;
+		background-color: rgba($body-color, .75);
+		transform: translate(0, 0);
+	}
+}
+
+.interaction-in {
+	&.animation-translate,
+	.animation-translate {
+		animation: animation-translate .35s $cubic-bezier-transition forwards;
+	}
+
+	&.animation-translate-overline,
+	.animation-translate-overline {
+		&::after {
+			animation: animation-translate-overline .15s $cubic-bezier-transition forwards;
+		}
+
+	}
+
+	@for $i from 1 through 5 {
+		.animation-item-#{$i} {
+			//animation-delay: #{$i * .35 + .15}s;
+			animation-delay: #{($i - 1) * .1}s;
+		}
+	}
+}
+
+@keyframes animation-translate {
+	from { transform: translate(-100%, 0); }
+	to { transform: translate(0, 0); }
+}
+
+@keyframes animation-translate-overline {
+	from { transform: translate(0, 0); }
+	to { transform: translate(-100%, 0); }
+}

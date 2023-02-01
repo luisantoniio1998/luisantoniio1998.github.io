@@ -1,0 +1,6 @@
+// import default boostrap styles
+@import "../../../node_modules/bootstrap/scss/list-group";
+
+@each $color, $value in $theme-colors {
+	@include custom-list-group-item-variant($color, $value);
+}

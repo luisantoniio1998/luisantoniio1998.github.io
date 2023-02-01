@@ -1,0 +1,124 @@
+.timeline {
+	position: relative;
+	overflow: hidden;
+	padding-left: $border-width / 2;
+
+	&::before {
+		content: "";
+		position: absolute;
+		width: 0;
+		left: $border-width / 2;
+		top: 0;
+		bottom: 0;
+		border-right: $border-width solid $border-color;
+	}
+
+	&::after {
+		content: "";
+		position: absolute;
+		width: $border-width * 2;
+		height: $border-width * 2;
+		left: 0;
+		top: 100%;
+		margin-top: -$border-width * 2;
+		background-color: $body-color;
+	}
+}
+
+.timeline-animated {
+	&::before {
+		transform: scaleY(0);
+		transform-origin: top;
+	}
+
+	&::after {
+		top: 0;
+	}
+
+	.timeline-item {
+		transform: translate(-100%, 0);
+
+		&::before {
+			transform: scaleY(0);
+			transform-origin: top;
+		}
+	}
+}
+
+.interaction-in {
+	&.timeline-animated,
+	.timeline-animated {
+		&::before {
+			animation: timeline-border .35s $cubic-bezier-transition .2s forwards;
+		}
+
+		&::after {
+			animation: timeline-dot .35s $cubic-bezier-transition .2s forwards;
+		}
+	}
+
+	.timeline-item {
+		animation: timeline-item .65s $cubic-bezier-transition forwards;
+
+		&::before {
+			animation: timeline-border .35s $cubic-bezier-transition forwards;
+		}
+	}
+
+	@for $i from 1 through 15 {
+		.timeline-item:nth-child(#{$i}n) {
+			animation-delay: #{$i * .15}s;
+		}
+
+		.timeline-item:nth-child(#{$i}n)::before {
+			animation-delay: #{$i * .15 + .55}s;
+		}
+	}
+}
+
+.timeline-item {
+	position: relative;
+	padding-left: map-get($spacers, 3);
+	margin-bottom: map-get($spacers, 10);
+
+	&::before {
+		content: "";
+		position: absolute;
+		width: 0;
+		left: 0;
+		top: 0;
+		bottom: 0;
+		border-right: $border-width solid $body-color;
+	}
+}
+
+.timeline-title {
+	font-size: $font-size-base * 2.25;
+	margin-bottom: map-get($spacers, 1);
+}
+
+.timeline-text {
+	margin-bottom: 0;
+}
+
+.timeline-date {
+	display: block;
+	margin-bottom: map-get($spacers, 3);
+	color: $gray-600;
+	font-size: $font-size-sm;
+}
+
+@keyframes timeline-border {
+	from { transform: scaleY(0); }
+	to { transform: scaleY(1); }
+}
+
+@keyframes timeline-dot {
+	from { top: 0; }
+	to { top: 100%; }
+}
+
+@keyframes timeline-item {
+	from { transform: translate(-100%, 0); }
+	to { transform: translate(0, 0); }
+}

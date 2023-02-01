@@ -1,0 +1,247 @@
+// Black & white theme
+//
+//
+
+// Color system
+//
+
+$white:    #fff;
+$gray-100: rgba(#000, 0.1);
+$gray-200: rgba(#000, 0.2);
+$gray-300: rgba(#000, 0.3);
+$gray-400: rgba(#000, 0.4);
+$gray-500: rgba(#000, 0.5);
+$gray-600: rgba(#000, 0.6);
+$gray-700: rgba(#000, 0.7);
+$gray-800: rgba(#000, 0.8);
+$gray-900: rgba(#000, 0.9);
+$black:    #000;
+
+$grays: ();
+$grays: map-merge(
+	(
+		"100": $gray-100,
+		"200": $gray-200,
+		"300": $gray-300,
+		"400": $gray-400,
+		"500": $gray-500,
+		"600": $gray-600,
+		"700": $gray-700,
+		"800": $gray-800,
+		"900": $gray-900
+	),
+	$grays
+);
+
+$blue:	  #494eff;
+$indigo:  #6610f2;
+$purple:  #710bb8;
+$pink:    #f8a2d5;
+$red:     #bb0e19;
+$orange:  #ff8b2b;
+$yellow:  #ffdb67;
+$green:   #15764b;
+$teal:    #22c9a6;
+$cyan: 	  #0a9cb4;
+
+$colors: ();
+$colors: map-merge(
+	(
+		"blue":       $blue,
+		"indigo":     $indigo,
+		"purple":     $purple,
+		"pink":       $pink,
+		"red":        $red,
+		"orange":     $orange,
+		"yellow":     $yellow,
+		"green":      $green,
+		"teal":       $teal,
+		"cyan":       $cyan,
+		"white":      $white,
+		"gray":       $gray-600,
+		"gray-dark":  $gray-800
+	),
+	$colors
+);
+
+$primary:       $black;
+$secondary:     $gray-500;
+$success:       $green;
+$danger:        $red;
+
+$theme-colors: ();
+$theme-colors: map-merge(
+	(
+		"primary":    $primary,
+		"success":    $success,
+		"danger":     $danger,
+	),
+	$theme-colors
+);
+
+$body-bg:                   $pink;
+$body-color:                $black;
+
+$link-color:                              theme-color("primary");
+$link-decoration:                         none;
+$link-hover-color:                        rgba($link-color, 0.75);
+$link-hover-decoration:                   underline;
+$emphasized-link-hover-darken-percentage: 15%;
+
+$yiq-text-dark:             $black;
+$yiq-text-light:            $white;
+
+$hr-border-color:             $gray-200;
+
+
+// Components
+//
+
+$border-color:                $gray-200;
+
+
+// Breadcrumbs
+//
+
+$breadcrumb-bg:                     transparent;
+$breadcrumb-divider-color:          $gray-600;
+$breadcrumb-active-color:           $gray-600;
+$breadcrumb-divider:                quote("/");
+
+
+// Cards
+//
+
+$card-cap-bg:                       rgba($body-color, .03);
+$card-bg:                           transparent;
+$card-color:						$body-color;
+
+
+// Carousel
+
+$carousel-control-color:             $body-color;
+$carousel-indicator-active-bg:       $body-color;
+$carousel-caption-color:             $body-color;
+
+
+// Dropdowns
+
+$dropdown-color:                    $body-color;
+$dropdown-bg:                       $body-bg;
+$dropdown-border-color:             $body-color;
+$dropdown-divider-bg:               $gray-100;
+$dropdown-link-color:               $link-color;
+$dropdown-link-hover-color:         $body-bg;
+$dropdown-link-hover-bg:            $body-color;
+$dropdown-link-disabled-color:      $gray-400;
+$dropdown-header-color:             $gray-600;
+$dropdown-link-active-color:        $body-bg;
+$dropdown-link-active-bg:           $body-color;
+
+
+// Forms
+
+$input-bg:                              		transparent;
+$input-disabled-bg:                     		transparent;
+$input-color:                           		$body-color;
+$input-border-color:                    		$gray-600;
+$input-group-addon-bg:                  		transparent;
+$custom-control-label-disabled-color:           $gray-400;
+$custom-control-indicator-checked-color: 		$body-bg;
+$custom-control-indicator-checked-disabled-bg:  $gray-400;
+$custom-select-disabled-color:      			$gray-400;
+$custom-select-disabled-bg:         			transparent;
+$custom-range-thumb-disabled-bg:             	$gray-400;
+
+
+// List group
+
+$list-group-bg:                     transparent;
+$list-group-border-color:           $body-color;
+$list-group-hover-bg:               $gray-100;
+$list-group-active-color:           $body-bg;
+$list-group-active-bg:              $body-color;
+$list-group-active-border-color:    $body-color;
+$list-group-disabled-color:         $gray-400;
+$list-group-action-color:           $gray-700;
+$list-group-action-active-color:    $body-bg;
+$list-group-action-active-bg:       $body-color;
+
+
+// Close
+
+$close-color:                       $body-color;
+
+
+// Modals
+
+$modal-content-color:               null;
+$modal-content-bg:                  transparent;
+$modal-content-border-color:        transparent;
+$modal-backdrop-bg:                 $body-bg;
+$modal-backdrop-opacity:            .9;
+$modal-header-border-color:         transparent;
+$modal-footer-border-color:         $modal-header-border-color;
+
+
+// Navs
+
+$nav-tabs-border-color:             $body-color;
+$nav-tabs-link-hover-border-color:  transparent;
+$nav-tabs-link-active-color:        $body-color;
+$nav-tabs-link-active-bg:           $body-bg;
+$nav-tabs-link-active-border-color: $body-color $body-color $nav-tabs-link-active-bg;
+$nav-pills-link-active-color:       $body-bg;
+
+
+// Navbar
+
+$navbar-dark-color:                 $link-color;
+$navbar-dark-hover-color:           $link-hover-color;
+$navbar-dark-active-color:          $body-color;
+$navbar-dark-disabled-color:        $gray-400;
+$navbar-dark-toggler-icon-bg:       url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'><path stroke='#{$navbar-dark-color}' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>");
+$navbar-dark-toggler-border-color:  transparent;
+$navbar-light-color:                $link-color;
+$navbar-light-hover-color:          $link-hover-color;
+$navbar-light-active-color:         $link-color;
+$navbar-light-disabled-color:       $gray-400;
+$navbar-light-toggler-icon-bg:      url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'><path stroke='#{$navbar-light-color}' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>");
+$navbar-light-toggler-border-color: transparent;
+
+
+// Pagination
+
+$pagination-color:                  $link-color;
+$pagination-bg:                     transparent;
+$pagination-border-color:           $border-color;
+$pagination-hover-color:            $link-hover-color;
+$pagination-hover-bg:               transparent;
+$pagination-hover-border-color:     $border-color;
+$pagination-active-color:           $link-color;
+$pagination-active-bg:              transparent;
+$pagination-active-border-color:    $pagination-active-color;
+$pagination-disabled-color:         $gray-400;
+$pagination-disabled-bg:            transparent;
+$pagination-disabled-border-color:  $border-color;
+
+
+// Popovers
+
+$popover-bg:                        $body-bg;
+$popover-border-color:              $body-color;
+$popover-header-bg:                 $body-bg;
+$popover-body-color:                $body-color;
+$popover-arrow-color:               $popover-bg;
+$popover-arrow-outer-color:         $body-color;
+
+
+// Progress bars
+
+$progress-bar-color:                $body-bg;
+
+
+// Tooltips
+
+$tooltip-color:                     $body-bg;
+$tooltip-bg:                        $body-color;

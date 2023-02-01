@@ -1,0 +1,10 @@
+// import default boostrap styles
+@import "../../../node_modules/bootstrap/scss/dropdown";
+
+.dropdown-menu {
+	margin: .125rem;
+}
+
+.dropdown-header {
+	text-transform: uppercase;
+}
