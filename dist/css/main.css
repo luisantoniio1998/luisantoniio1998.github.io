@@ -13371,16 +13371,16 @@ a.badge-danger:focus {
     text-align: center;
   }
 
-  .section-first{
-    min-height: 100vh !important;
-  }
+
 
   #centershit2 {
     text-align: center;
   }
 }
 
-
+  .section-first{
+    min-height: 100vh !important;
+  }
 
 .jumbotron-fluid {
   padding-right: 0;
