@@ -1,0 +1,239 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    line-height: 1.6;
+    background: #fff;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+
+}
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.profile-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    object-fit: cover;
+    object-position: center 50%;
+}
+
+.title {
+    color: var(--secondary-text);
+    margin-bottom: 1.5rem;
+}
+
+.profile p {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4rem;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-links a, .theme-toggle {
+    color: #666;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.nav-links a:hover {
+    color: #333;
+}
+
+h1 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+}
+
+h2 {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 4rem;
+}
+
+.social-icon {
+    color: #666;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.social-icon:hover {
+    color: #333;
+}
+
+:root {
+    /* Light theme variables */
+    --bg-color: #ffffff;
+    --text-color: #333333;
+    --secondary-text: #666666;
+}
+
+[data-theme="dark"] {
+    /* Dark theme variables */
+    --bg-color: #111111;
+    --text-color: #ffffff;
+    --secondary-text: #aaaaaa;
+}
+.sun-icon {
+    display: block;
+}
+
+.moon-icon {
+    display: none;
+}
+
+
+/* SVG color inheritance */
+.sun-icon,
+.moon-icon {
+    color: var(--secondary-text);
+}
+
+.theme-toggle:hover .sun-icon,
+.theme-toggle:hover .moon-icon {
+    color: var(--text-color);
+}
+
+.project-info a {
+    color: var(--secondary-text);  /* This matches the secondary text color */
+    text-decoration: none;         /* Removes the underline */
+}
+
+.project-info a:hover {
+    color: var(--text-color);      /* Changes to primary text color on hover */
+}
+.project-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;  /* Add some vertical padding */
+}
+
+.project-year {
+    color: var(--secondary-text);
+    font-size: 0.9rem;
+    margin-left: 3rem;  /* Add more space between project info and year */
+}
+
+.project-section {
+    margin-bottom: 4rem;  /* Increases space between sections */
+}
+
+.project-section h2 {
+    margin-bottom: 1.5rem;  /* More space between heading and project list */
+    color: var(--text-color);  /* Makes the headings stand out more */
+}
+
+/* Optional: you could also add a subtle divider */
+.project-section:not(:last-child) {
+    border-bottom: 1px solid var(--secondary-text);
+    padding-bottom: 3rem;
+}
+
+
+.cv-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--secondary-text);
+    border-radius: 4px;
+    color: var(--secondary-text);
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.cv-button:hover {
+    color: var(--text-color);
+    border-color: var(--text-color);
+}
+
+.cv-button svg {
+    width: 18px;
+    height: 18px;
+}
+.tech-stack {
+    color: #666;  /* or any color that matches your theme */
+    margin-left: 4px;
+    font-size: 0.9em;  /* slightly smaller than the main text */
+}
+
+.about-content {
+    grid-template-columns: 150px 1fr;  /* date column and content column */
+    gap: 2rem;  /* space between date and content */
+}
+
+.about-date {
+    color: #666;  /* subtle color for the date */
+    font-family: monospace;  /* gives a nice technical feel to the date */
+    margin-bottom: 1rem;
+}
+
+[data-theme="light"] .sun-icon {
+    display: none;  /* Changed from block */
+}
+
+[data-theme="light"] .moon-icon {
+    display: block;  /* Changed from none */
+}
+
+[data-theme="dark"] .sun-icon {
+    display: block;  /* Changed from none */
+}
+
+[data-theme="dark"] .moon-icon {
+    display: none;  /* Changed from block */
+}
+
+.nav-links a.active {
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+.theme-toggle {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    color: var(--secondary-text);
+    transition: color 0.3s ease;
+}
+
+.theme-toggle:hover {
+    color: var(--text-color);
+}
