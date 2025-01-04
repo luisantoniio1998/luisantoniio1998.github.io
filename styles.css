@@ -193,16 +193,30 @@ h2 {
     font-size: 0.9em;  /* slightly smaller than the main text */
 }
 
+@media (max-width: 768px) { /* This targets mobile devices */
+    .tech-stack {
+      display: block;
+      margin-top: 8px; /* Optional: adds some spacing above */
+    }
+  }
+
 .about-content {
     grid-template-columns: 150px 1fr;  /* date column and content column */
     gap: 2rem;  /* space between date and content */
 }
+
+.about-content p {
+    margin-bottom: 0.5rem; /* Adds more space between paragraphs */
+}
+
 
 .about-date {
     color: #666;  /* subtle color for the date */
     font-family: monospace;  /* gives a nice technical feel to the date */
     margin-bottom: 1rem;
 }
+
+
 
 [data-theme="light"] .sun-icon {
     display: none;  /* Changed from block */
