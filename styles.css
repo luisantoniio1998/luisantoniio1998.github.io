@@ -170,14 +170,21 @@ h2 {
     align-items: center;
     gap: 0.5rem;
     margin-top: 1.5rem;
-    padding: 0.5rem 1rem;
+    margin-right: 1rem;  /* Add space between buttons */
+    padding: 0.4rem 0.8rem;  /* Smaller padding */
     border: 1px solid var(--secondary-text);
     border-radius: 4px;
     color: var(--secondary-text);
     text-decoration: none;
     transition: all 0.2s ease;
+    font-size: 0.9rem;  /* Smaller font size */
 }
 
+/* Optional: create a container for the buttons */
+.cv-buttons {
+    display: flex;
+    gap: 1rem;
+}
 .cv-button:hover {
     color: var(--text-color);
     border-color: var(--text-color);
