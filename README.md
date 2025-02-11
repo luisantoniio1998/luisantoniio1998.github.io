@@ -1,1 +1,2 @@
-new themed portfolio page 
+# Github Page
+GitHub page showcasing Curriculum , Projects and About section 
