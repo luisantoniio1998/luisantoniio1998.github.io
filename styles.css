@@ -26,8 +26,8 @@ body {
 }
 
 .profile-img {
-    width: 100px;
-    height: 100px;
+    width: 20%;
+    height: auto;
     border-radius: 50%;
     margin-bottom: 1rem;
     object-fit: cover;
@@ -257,4 +257,12 @@ h2 {
 
 .theme-toggle:hover {
     color: var(--text-color);
+}
+
+.about-image {
+    max-width: 100%; /* Reduced from 100% to 600px */
+    height: auto;
+    margin: 2rem auto; /* Changed to auto margins for horizontal centering */
+    border-radius: 8px;
+    display: block; /* Makes the margin: auto work for centering */
 }
