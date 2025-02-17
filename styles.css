@@ -67,6 +67,7 @@ nav {
 }
 
 h1 {
+    text-align:center;
     font-size: 1.5rem;
     font-weight: 500;
     margin-bottom: 2rem;
@@ -131,7 +132,7 @@ h2 {
 .project-info a {
     color: var(--secondary-text);  /* This matches the secondary text color */
     text-decoration: none;
-    font-size: 0.7rem/* Removes the underline */
+    font-size: 0.7rem;/* Removes the underline */
 }
 
 .project-info a:hover {
