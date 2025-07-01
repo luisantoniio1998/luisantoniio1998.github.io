@@ -267,3 +267,22 @@ h2 {
     border-radius: 8px;
     display: block; /* Makes the margin: auto work for centering */
 }
+
+/* Style the home icon SVG */
+.home-icon svg {
+    color: var(--secondary-text);
+    stroke: var(--secondary-text);
+    transition: color 0.2s, stroke 0.2s;
+}
+
+/* On hover */
+.home-icon:hover svg {
+    color: var(--text-color);
+    stroke: var(--text-color);
+}
+
+/* When active (on the current page) */
+.home-icon.active svg {
+    color: var(--text-color);
+    stroke: var(--text-color);
+}
